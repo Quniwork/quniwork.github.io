@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="discrption" content="KD - KD999.net" />
+	<meta name="keyword" content="KD - KD999.net" />
+
+	<!--  Title -->
+	<title>KD - KD999.net</title>
+
+	<!-- Font Google -->
+	<link rel="preload" href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500&family=Poppins:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript>
+		<link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+	</noscript>
+
+	<link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
+	<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+
+	<!-- custom styles (optional) -->
+	<link href="assets/css/plugins.css" rel="stylesheet" />
+	<link href="assets/css/style.css" rel="stylesheet" />
+</head>
+
+<!--classic-menu-->
+
+<body class="v-dark dsn-effect-scroll dsn-cursor-effect dsn-ajax">
+
+	<!-- ========== Loading Page ========== -->
+	<div class="preloader">
+		<span class="percent v-middle">0</span>
+		<span class="loading-text text-uppercase">Loading ...</span>
+		<div class="preloader-bar">
+			<div class="preloader-progress"></div>
+		</div>
+		<h1 class="title v-middle">
+			<span class="letter-stroke">KD</span>
+			<span class="text-fill">KD</span>
+		</h1>
+	</div>
+	<!-- ========== End Loading Page ========== -->
+
+
+	<!-- ========== Menu ========== -->
+	<div class="site-header dsn-load-animate dsn-container">
+		<div class="extend-container d-flex w-100 align-items-baseline justify-content-between align-items-end">
+			<div class="inner-header p-relative">
+				<div class="main-logo">
+					<a href="index.html" data-dsn="parallax">
+						<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+							data-dsn-src="assets/img/logo.png" alt="" />
+					</a>
+				</div>
+			</div>
+			<div class="menu-icon d-flex align-items-baseline">
+				<div class="text-menu p-relative  font-heading text-transform-upper">
+					<div class="p-absolute text-button">Menu</div>
+					<div class="p-absolute text-open">Open</div>
+					<div class="p-absolute text-close">Close</div>
+				</div>
+				<div class="icon-m" data-dsn="parallax" data-dsn-move="10">
+					<span class="menu-icon-line p-relative d-inline-block icon-top"></span>
+					<span class="menu-icon-line p-relative d-inline-block icon-center"></span>
+					<span class="menu-icon-line p-relative d-block icon-bottom"></span>
+				</div>
+			</div>
+			<nav class="accent-menu dsn-container main-navigation p-absolute  w-100  d-flex align-items-baseline ">
+				<div class="menu-cover-title">Menu</div>
+				<ul class="extend-container p-relative d-flex flex-column justify-content-center h-100">
+					<li>
+						<a href="calendar.html">
+							<span class="dsn-title-menu">財經月曆</span>
+							<span class="dsn-meta-menu">01</span>
+							<span class="dsn-bg-arrow"></span>
+						</a>
+					</li>
+					<li>
+						<a href="market.html">
+							<span class="dsn-title-menu">全球休市市場</span>
+							<span class="dsn-meta-menu">02</span>
+							<span class="dsn-bg-arrow"></span>
+						</a>
+					</li>
+					<li>
+						<a href="advance.html">
+							<span class="dsn-title-menu">國際大事預告</span>
+							<span class="dsn-meta-menu">03</span>
+							<span class="dsn-bg-arrow"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://anydesk.com/zhs/downloads/" target="_blank">
+							<span class="dsn-title-menu">遠端下載</span>
+							<span class="dsn-meta-menu">04</span>
+							<span class="dsn-bg-arrow"></span>
+						</a>
+					</li>
+				</ul>
+				<div class="container-content  p-absolute h-100 left-60 d-flex flex-column justify-content-center">
+					<div class="nav__info">
+						<div class="nav-content">
+							<p class="title-line">租用交易系統</p>
+							<p>請洽所屬代理商</p>
+						</div>
+						<div class="nav-content">
+							<p>
+								KD999.net
+							</p>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</div>
+	<!-- ========== End Menu ========== -->
+
+
+	<main class="main-root" id="root">
+
+		<transition name="fade" appear>
+			<div class="modal-overlay" v-if="signinShow" @click="signinShow = false"></div>
+		</transition>
+		<transition name="pop" appear>
+			<div class="modal" role="dialog" v-if="signinShow">
+				<div class="form">
+					<h1>SIGN IN 登入</h1>
+					<div class="form-group">
+						<label>帳號</label>
+						<input type="text" placeholder="請輸入帳號">
+					</div>
+					<div class="form-group">
+						<label>密碼
+							<a href="#">忘記密碼</a>
+						</label>
+						<input type="text" placeholder="請輸入密碼">
+					</div>
+					<div class="form-group btn-group">
+						<button @click="signinShow = false" class="btn btn-clear">取消</button>
+						<button class="btn btn-ok">登入</button>
+					</div>
+				</div>
+			</div>
+		</transition>
+
+		<transition name="fade" appear>
+			<div class="modal-overlay" v-if="signupShow" @click="signupShow = false"></div>
+		</transition>
+		<transition name="pop" appear>
+			<div class="modal" role="dialog" v-if="signupShow">
+				<div class="form">
+					<h1>SIGN UP 註冊</h1>
+					<div class="form-group">
+						<label>手機號碼</label>
+						<input type="tel" placeholder="請輸入手機號碼">
+					</div>
+					<div class="form-group">
+						<label>密碼</label>
+						<input type="password" placeholder="請輸入密碼">
+					</div>
+					<div class="form-group">
+						<label>密碼確認</label>
+						<input type="password" placeholder="請再次輸入密碼">
+					</div>
+					<div class="form-group btn-group">
+						<button @click="signupShow = false" class="btn btn-clear">取消</button>
+						<button class="btn btn-ok">註冊</button>
+					</div>
+				</div>
+			</div>
+		</transition>
+
+		<transition name="fade" appear>
+			<div class="modal-overlay" v-if="messageShow" @click="messageShow = false"></div>
+		</transition>
+		<transition name="pop" appear>
+			<div class="modal" role="dialog" v-if="messageShow">
+				<div class="form">
+					<h1>問題反饋</h1>
+					<div class="form-group">
+						<label>姓名</label>
+						<input type="text" placeholder="請輸入姓名">
+					</div>
+					<div class="form-group">
+						<label>行動電話</label>
+						<input type="tel" placeholder="請輸入行動電話">
+					</div>
+					<div class="form-group">
+						<label>內容</label>
+						<textarea cols="30" rows="4"></textarea>
+					</div>
+					<div class="form-group btn-group">
+						<button @click="messageShow = false" class="btn btn-clear">取消</button>
+						<button class="btn btn-ok">送出</button>
+					</div>
+				</div>
+			</div>
+		</transition>
+
+		<!-- ========== side box left ========== -->
+		<div class="side-bar-full">
+			<div class="side-box-left ">
+				<div class="side-menu border-left border-right p-relative h-100 d-flex justify-content-center">
+					<div class="page-active">
+						<h2 class="text-uppercase">Home</h2>
+					</div>
+				</div>
+			</div>
+			<div class="side-box-right text-stroke border-right text-uppercase">
+				<div class="text-inner over-hidden">
+					<div class="text-stroke-box">
+						<div class="text-stroke-inner">KD</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ========== End side box left ========== -->
+
+
+		<div id="dsn-scrollbar">
+			<div class=" inner-content">
+				<div class="wrapper ">
+					<!-- ========== Slider Parallax ========== -->
+					<div class="p-relative h-100">
+						<div class="main-slider full-width has-horizontal dsn-header-animation  v-dark-head">
+
+							<div class="swiper-container slide-inner bg-container dsn-hero-parallax-img  h-100">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide over-hidden">
+										<div class="image-bg w-100 h-100 " data-overlay="5" data-swiper-parallax="50%">
+											<img class="cover-bg-img" data-dsn-position="10% 10%"
+												src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+												data-dsn-src="assets/img/slider01.jpg" alt="">
+										</div>
+										<div class="slide-content p-absolute">
+											<div class="content p-relative">
+												<div class="d-block"></div>
+												<a href="#" class="effect-ajax has-box-mod move-circle" data-dsn="parallax"
+													data-dsn-color="#222" data-dsn-ajax="slider">
+													<h1 class="title">
+														技術分析的領航者<br>專業操盤手必備工具
+													</h1>
+												</a>
+												<p class="description border-before mt-25 max-w570">
+													The leader of technical analysis,
+													Essential tools for professional traders
+												</p>
+												<a href="#" class="link-custom v-light-head background-main image-zoom mt-30 effect-ajax" data-dsn-ajax="slider" data-dsn="parallax" @click="signupShow = !signupShow">
+													立即註冊
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide over-hidden">
+										<div class="image-bg w-100 h-100 " data-overlay="5" data-swiper-parallax="50%">
+											<img class="cover-bg-img" data-dsn-position="10% 10%"
+												src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+												data-dsn-src="assets/img/slider02.jpg" alt="">
+										</div>
+										<div class="slide-content p-absolute">
+											<div class="content p-relative">
+												<div class="d-block"></div>
+												<a href="#" class="effect-ajax has-box-mod move-circle" data-dsn="parallax"
+													data-dsn-color="#222" data-dsn-ajax="slider">
+													<h1 class="title">
+														新技術 一步到位
+													</h1>
+												</a>
+												<p class="description border-before mt-25 max-w570">
+													New technology,
+													Complete in one step
+												</p>
+												<div class="description mt-25 max-w570">
+													<ul class="lest-icon">
+														<li>經回測使用我們的交易工具有效提升交易勝率 85%</li>
+														<li>100+ 預建的最熱門指標</li>
+														<li>50+ 智能繪圖工具</li>
+														<li>成交量分佈指標</li>
+														<li>K線型態辨示</li>
+														<li>多時間周期分析</li>
+													</ul>
+												</div>
+												<a href="#" class="link-custom v-light-head background-main image-zoom mt-30 effect-ajax" data-dsn-ajax="slider" data-dsn="parallax" @click="signupShow = !signupShow">
+													立即註冊
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="dsn-slider-content p-absolute h-100 w-100 ">
+								<div class="dsn-container  d-flex align-items-center">
+								</div>
+							</div>
+							<div
+								class="control-nav p-absolute w-100  d-flex dsn-container align-items-center  justify-content-between ">
+								<div class="dsn-pagination p-relative w-50">
+									<div class="slider-current-index">01</div>
+									<div class="swiper-pagination-control"></div>
+									<div class="slider-total-index"></div>
+								</div>
+
+								<div class="d-flex">
+									<div class="prev-container">
+										<div class="container-inner">
+											<div class="triangle"></div>
+											<svg class="circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+												<g class="circle-wrap" fill="none" stroke-width="1" stroke-linejoin="round"
+													stroke-miterlimit="10">
+													<circle cx="12" cy="12" r="10.5"></circle>
+												</g>
+											</svg>
+										</div>
+									</div>
+									<div class="next-container">
+										<div class="container-inner">
+											<div class="triangle"></div>
+											<svg class="circle" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+												<g class="circle-wrap" fill="none" stroke-width="1" stroke-linejoin="round"
+													stroke-miterlimit="10">
+													<circle cx="12" cy="12" r="10.5"></circle>
+												</g>
+											</svg>
+										</div>
+									</div>
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+
+					<!-- ========== End Slider Parallax ========== -->
+
+					<!-- ========== About Section ========== -->
+					<section class="about p-relative dsn-container section-margin" data-dsn-title="值得信賴">
+						<div class="section-title">
+							<span class="tag-heading p-10 mb-15 background-section heading-color">Why Choose Us</span>
+							<h2 class="heading-h2">流暢且安全的系統架構<br>每月受到200萬交易者的信賴</h2>
+						</div>
+
+						<div class="row">
+							<div class="col-12 col-xl-6">
+								<div class="p-relative text">
+									<h2 class="title-block ">強大的圖表分析<br>穩定且安全的系統架構</h2>
+									<p class="mt-30">KD 的平台穩定連接到數百個數據源，將財務和其它數據加到組合中，您將獲得其他任何公共平台都無法提供的深度涵蓋。我們是網路交易行業的領軍人，更是受到30萬+客戶的信任！</p>
+									<!-- <a href="#" class="link-custom v-light image-zoom mt-30" data-dsn="parallax">
+										立即租用
+									</a> -->
+								</div>
+							</div>
+							<div class="col-12 col-xl-6">
+								<div class="box-experience  d-flex justify-content-center flex-column h-100">
+									<div class="numb-ex fw-bold cover-bg" data-dsn-bg="assets/img/about.gif">
+										30+
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+
+					<section class="about p-relative dsn-container section-margin" data-dsn-title="友好介面">
+						<div class="section-title">
+							<h2 class="heading-h2">新進的智慧雲端版本<br>友好的用戶介面</h2>
+						</div>
+
+						<div class="row">
+							<div class="col-12">
+								<div class="row d-flex ustify-content-center">
+									<div class="col-11">
+										<div class="flex-column h-100">
+											<img src="assets/img/about2.png" alt="" class="img-fuild">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- ========== End About Section ========== -->
+
+					<!-- ========== testimonials 2 ========== -->
+					<section class="testimonials testimonials-two dsn-container p-relative mb-section dsn-swiper"
+						data-dsn-title="用戶體驗">
+						<div class="section-title">
+							<span class="tag-heading p-10 mb-15 background-section heading-color">
+								Feedback from
+							</span>
+							<h2 class="heading-h2">用戶體驗</h2>
+						</div>
+
+						<div class="testimonial-inner ">
+							<div class="swiper-container">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide testimonial-item">
+										<i class="fas fa-quote-left"></i>
+										<div class="testimonial-content">
+											<p class="max-w750 p-large">術分析的領航者, 專業的操盤用KD, 非常完整, 用過就回不去了！真的很推薦, 試了就知道！</p>
+										</div>
+
+										<div class="testimonial-author d-flex align-items-center">
+											<div class="author">
+												<img src="assets/img/user4.jpg" alt="">
+											</div>
+											<div class="author-text">
+												<h4>王先生</h4>
+												<h5>高雄 三民區</h5>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide testimonial-item">
+										<i class="fas fa-quote-left"></i>
+										<div class="testimonial-content">
+											<p class="max-w750 p-large">即時國際數據 提供盤中交易參考  不需要再跳出視窗  真是太方便了</p>
+										</div>
+
+										<div class="testimonial-author d-flex align-items-center">
+											<div class="author">
+												<img src="assets/img/user1.jpg" alt="">
+											</div>
+											<div class="author-text">
+												<h4>林先生</h4>
+												<h5>台北 信義區</h5>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide testimonial-item">
+										<i class="fas fa-quote-left"></i>
+										<div class="testimonial-content">
+											<p class="max-w750 p-large">可選週期壓力支撐  讓我提高交易勝率 從此不在亂下單</p>
+										</div>
+
+										<div class="testimonial-author d-flex align-items-center">
+											<div class="author">
+												<img src="assets/img/user2.jpg" alt="">
+											</div>
+											<div class="author-text">
+												<h4>黃先生</h4>
+												<h5>台中 南屯區</h5>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide testimonial-item">
+										<i class="fas fa-quote-left"></i>
+										<div class="testimonial-content">
+											<p class="max-w750 p-large">可分析勝率  讓我找到自己的交易模式</p>
+										</div>
+
+										<div class="testimonial-author d-flex align-items-center">
+											<div class="author">
+												<img src="assets/img/user3.jpg" alt="">
+											</div>
+											<div class="author-text">
+												<h4>陳先生</h4>
+												<h5>嘉義</h5>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div
+								class="control-nav p-absolute w-100  d-flex dsn-container align-items-center  justify-content-between ">
+								<div class="prev-container image-zoom move-circle background-theme" data-dsn="parallax">
+									<svg viewBox="0 0 40 40">
+										<path class="path circle" d="M20,2A18,18,0,1,1,2,20,18,18,0,0,1,20,2">
+										</path>
+										<polyline class="path" points="14.6 17.45 20 22.85 25.4 17.45">
+										</polyline>
+									</svg>
+								</div>
+								<div class="next-container image-zoom move-circle background-theme" data-dsn="parallax">
+									<svg viewBox="0 0 40 40">
+										<path class="path circle" d="M20,2A18,18,0,1,1,2,20,18,18,0,0,1,20,2">
+										</path>
+										<polyline class="path" points="14.6 17.45 20 22.85 25.4 17.45">
+										</polyline>
+									</svg>
+								</div>
+							</div>
+
+
+						</div>
+					</section>
+					<!-- ========== End testimonials 2 ========== -->
+
+					<section class="rental p-relative dsn-container" data-dsn-title="租用交易系統">
+						<div class="section-title">
+							<h2 class="heading-h2">如何租用交易系統</h2>
+						</div>
+
+						<div class="row">
+							<div class="col-12">
+								<div class="row d-flex ustify-content-center">
+									<div class="col-11">
+										<div class="flex-column h-100">
+											<h2 class="title-block ">請洽所屬代理商</h2>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<!-- ========== Footer ========== -->
+					<footer class="footer border-top background-section">
+						<div class="dsn-container">
+							<div class="d-flex justify-content-between align-items-center">
+								<div class="footer-item ">
+									<a href="" class="logo-footer m-auto">
+										<img src="assets/img/logo.png" class="cover-bg-img">
+									</a>
+								</div>
+
+								<div class="footer-item text-right">
+									<div class="nav-footer">
+										<ul>
+											<li class="d-inline-block over-hidden"><a class="link-hover" href="calendar.html">財經月曆</a>
+											</li>
+											<li class="d-inline-block over-hidden"><a class="link-hover" href="market.html">全球休市市場</a>
+											</li>
+											<li class="d-inline-block over-hidden"><a class="link-hover" href="advance.html">國際大事預告</a>
+											</li>
+											<li class="d-inline-block over-hidden"><a class="link-hover" href="https://anydesk.com/zhs/downloads/" target="_blank">遠端下載</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="footer-bottom d-grid border-top pt-30 mt-30">
+								<div class="footer-item">
+									<div class="copyright">
+										<div class="copright-text over-hidden">Copyright © 2021 <a href="index.html">KD.</a> All rights reserved.</div>
+										<p class="pt-30 footer-info">通過獲取重要的細節（企業的安全問題，其合法的聯繫信息以及用於保護您的數據的內容），快速確定您是否可以信任站點。<br>
+											經過 <a href="https://chrome.google.com/webstore/detail/trustedsite/meaanhhbdanomagjkjleigjfiamjhomi" target="_blank">TrustedSite</a> 認證的網站經過嚴格的測試和認證，可幫助您確保上網安全。<br>
+											SSL 安全通訊加密。© KD保留一切權利。</p>
+										</div>
+									</div>
+							</div>
+						</div>
+					</footer>
+					<!-- ========== End Footer ========== -->
+				</div>
+			</div>
+
+		</div>
+
+		<!-- ========== Contact Form Model ========== -->
+		<div class="header-btn">
+			<a href="#"  @click="signinShow = !signinShow">Sign in 登入</a> / <a href="#"  @click="signupShow = !signupShow">Sign up 註冊</a> / <a href="#"  @click="messageShow = !messageShow">問題反饋</a>
+		</div>
+		<!-- ========== End Contact Form Model ========== -->
+
+		<!-- ========== Contact Stories ========== -->
+		<div class="stories-btn">
+			<div class="stories-btn-txt">租用交易系統</div>
+		</div>
+		<div class="dsn-stories dsn-stories-model">
+			<div class="close-story"></div>
+			<h3 class="title">請洽所屬代理商</h3>
+		</div>
+		<!-- ========== End Contact Stories ========== -->
+
+	</main>
+
+
+
+
+	<!-- ========== Cursor Page ========== -->
+	<div class="cursor">
+
+		<div class="cursor-helper">
+			<span class="cursor-drag">Drag</span>
+			<span class="cursor-view">View</span>
+			<span class="cursor-open"><i class="fas fa-plus"></i></span>
+			<span class="cursor-close">Close</span>
+			<span class="cursor-play">play</span>
+			<span class="cursor-next"><i class="fas fa-chevron-right"></i></span>
+			<span class="cursor-prev"><i class="fas fa-chevron-left"></i></span>
+		</div>
+
+	</div>
+	<!-- ========== End Cursor Page ========== -->
+
+
+	<!-- ========== Scroll Right Page To Top Page ========== -->
+	<div class="scroll-to-top">
+		<img src="assets/img/scroll_top.svg" alt="">
+		<div class="box-number v-middle">
+			<span>0%</span>
+		</div>
+	</div>
+	<!-- ========== End Scroll Right Page To Top Page ========== -->
+
+	<!-- ========== paginate-right-page ========== -->
+	<div class="dsn-paginate-right-page"></div>
+
+	<!-- Optional JavaScript -->
+	<script src="assets/js/jquery-3.1.1.min.js"></script>
+	<script src="assets/js/plugins.min.js"></script>
+	<script src="assets/js/dsn-grid.min.js"></script>
+	<script src="assets/js/custom.js?v=1"></script>
+	<script src="assets/js/vue.min.js"></script>
+	<script>
+		new Vue({
+			el: '#root',
+			data: {
+				signinShow: false,
+				signupShow: false,
+				messageShow: false
+			}
+		})
+	</script>
+
+</body>
+
+</html>
